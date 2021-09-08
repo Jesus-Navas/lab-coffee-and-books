@@ -1,0 +1,29 @@
+<div class="container">
+    
+    <hr>
+
+<h2>Edit a place</h2>
+<br>
+<form action="/edit/{{id}}" method="POST">
+    <div class="mb-4">
+        <label for="placename" class="form-label">placename</label>
+        <input type="text" class="form-control" id="placename" name="placename">
+    </div>
+    <div class="mb-4">
+        <label for="lat" class="form-label">Latitud</label>
+        <input type="text" class="form-control" id="lat" name="lat">
+    </div>
+    <div class="mb-4">
+        <label for="lng" class="form-label">Longitud</label>
+        <input type="text" class="form-control" id="lng" name="lng">
+    </div>
+
+    <select name="type" class="form-select" aria-label="Default select example">
+        <option selected value="coffeShop">Coffe Shop</option>
+        <option value="bookStore">Book Store</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+</form>
+
+</div>

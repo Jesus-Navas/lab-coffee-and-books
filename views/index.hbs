@@ -1,2 +1,56 @@
 <h1>{{title}} 🚀</h1>
 <p>Welcome Ironhacker!</p>
+
+<h3>Create a place</h3>
+
+<form action ="/create" method="POST">
+    <div class="mb-4">
+        <label for="placename" class="form-label">Place name</label>
+        <input type="text" class="form-control" id="placename" name="placename">
+    </div>
+    <div class="mb-4">
+        <label for="lat" class="form-label">Latitud</label>
+        <input type="text" class="form-control" id="lat" name="lat">
+    </div>
+    <div class="mb-4">
+        <label for="lng" class="form-label">Longitud</label>
+        <input type="text" class="form-control" id="lng" name="lng">
+    </div>
+    
+    <select name="type" class="form-select" aria-label="Default select example">
+        <option selected value="coffeShop">Coffe Shop</option>
+        <option value="bookStore">Book Store</option>
+    </select>
+
+<button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<h3>Place list</h3>
+
+{{#each places}}
+
+<p>
+    {{placename}}
+    
+    {{type}}
+
+    <a href="/edit">edit</a>
+</p>
+
+<hr style="opacity: .5;">
+
+{{/each}}
+
+<h3>Location places</h3>
+
+<div class="container">
+    <hr>
+    <figure id="myMap"></figure>
+
+   
+    <script src="/js/mapStyles.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/js/places-map-setup.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWwbeEiQJMHsugeTlYKYVH2E_9xgI8lTc&callback=initMap"></script>
+
+</div>
